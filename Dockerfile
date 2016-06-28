@@ -9,3 +9,6 @@ RUN apk add --update \
   && rm -rf /var/cache/apk/*
 RUN mkdir /var/log/diamond /etc/diamond
 ENTRYPOINT diamond && tail -f /var/log/diamond/diamond.log
+RUN chmod -R 777 /var/log && chmod -R 777 /var/run
+USER 1000
+
